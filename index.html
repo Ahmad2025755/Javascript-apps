@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator</title>
+</head>
+
+<body>
+
+
+
+
+</body>
+
+
+<script>
+
+    var choice = prompt("Welcome to Area Calculator. \n Please enter your choice: \n 1. Area of Rectangle. \n 2. Area of Triangle. \n 3. Area of Circle. \n 4. Area of Parallelogram");
+
+if (choice == '1'){
+
+var length  = prompt("Please enter the length:");
+var breadth  = prompt("Please enter the breadth");
+
+var result1 = Number(length) * Number(breadth)
+alert("The area of the rectangle is:" + result1)
+}
+
+if (choice == '2'){
+
+var length1 = prompt("Please enter the length:");
+var breadth1 = prompt("Please enter the breadth:");
+
+var firstresult = Number(length1) * Number(breadth1)
+var result2 = (firstresult) / 2
+alert("The area of Triangle is" + result2)
+}
+
+if (choice == '3'){
+
+var pie = 3.14
+var radius1 = prompt("Please enter the first radius:");
+var radius2 = prompt("Please enter the second radius:");
+
+var result3 = pie * Number(radius1) * Number(radius2)
+alert("The area of circle is" + result3)
+}
+
+if (choice == '4') {
+
+var height = prompt("Please enter the base:");
+var base = prompt("Please enter the base:");
+
+var result4 = Number(height) * Number(base)
+alert("The area of the Parralelogram is:" + result4)
+}
+</script>
+
+
+
+</html>
