@@ -6,36 +6,23 @@
     <title>Document</title>
 </head>
 <body>
+
+ <div>
+
+    <h1> Stopwatch</h1>
+
+    <p>
+        <span id ="seconds">00</span>:<span id = "milliseconds">00</span>
+    </p>
+
+    <button id = "Button-start">Start</button>
+    <button id = "Button-stop">Stop</button>
+    <button id = "Button-reset">Reset</button>
+
+
+</div>
+
     
-<h1> Palindrome App</h1>
-<hr>
-<br>
-
 </body>
-
-<script>
-
-function palindrome(myString) {
-
-
-
-    var input = myString.replace(/[^A-Z0-9]/ig, "").toLowerCase();
-
-    var reversedInput = input.split('').reverse().join('');
-
-
-    if (input === reversedInput){ 
-
-        document.write("<div>" + myString + " is a Palindrome </div>" );
-}     else {
-        document.write("<div>" + myString + "It is not a palindrome </div>");
-}
-
-}
-
-
-palindrome("madam");
-
-</script>
-
+<script src = "script.js"></script>
 </html>
