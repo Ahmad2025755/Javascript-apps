@@ -1,42 +1,32 @@
-function showTime() {
-    var date = new Date();
+window.onload = function() {
+    
+    var countNum = 0;
 
-    // Pakistan time offset (UTC+5)
-    var pakistanTime = new Date(date.toLocaleString("en-US", { timeZone: "Asia/Karachi" }));
+    var showNum = document.getElementById("seconds");
 
-    var year = pakistanTime.getFullYear();
-    var month = pakistanTime.toLocaleString("en-US", { month: "long" });
-    var day = pakistanTime.getDate();
+    var startBtn = document.getElementById('Button-start');
+    var stopBtn = document.getElementById('Button-stop');
+    var resetBtn = document.getElementById('Button-reset');
 
-    var h = pakistanTime.getHours();
-    var m = pakistanTime.getMinutes();
-    var s = pakistanTime.getSeconds();
+    var loop;
 
-    var session = "PM";
-
-    if (h == 0) {
-        h = 12;
+    startBtn.onclick = function () {
+        clearInterval(loop);
+        loop = setInterval(runCount, 1000);
     }
 
-    if (h > 12) {
-        h = h - 12;
-        session = "AM";
+    stopBtn.onclick = function () {
+        clearInterval(loop);
     }
 
-    h = (h < 10) ? "0" + h : h;
-    m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
+    resetBtn.onclick = function () {
+        clearInterval(loop)
+        countNum = 0;
+        showNum.innerHTML = "0";
+    }
 
-    // everything on new lines
-    var output =
-        "Year: " + year + "\n" +
-        "Month: " + month + "\n" +
-        "Day: " + day + "\n" +
-        "Time: " + h + ":" + m + ":" + s + " " + session;
-
-    document.getElementById("WorldTimes").innerText = output;
-
-    setTimeout(showTime, 1000);
+    function runCount() {
+        countNum++;
+        showNum.innerHTML = countNum;
+    }
 }
-
-showTime();
