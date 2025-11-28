@@ -1,0 +1,9 @@
+#dice {
+
+    font-size: 320px;
+}
+
+#dice:hover {
+
+    cursor: pointer;
+}
