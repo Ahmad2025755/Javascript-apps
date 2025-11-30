@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #1e1e2f;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    #num {
+      font-size: 70px;
+      margin-bottom: 30px;
+      padding: 20px 40px;
+      background: #4f46e5; 
+      border-radius: 20px;
+      box-shadow: 0 0 20px #4f46e5;
+    }
+
+    #btn {
+      font-size: 28px;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: #22d3ee; 
+      color: #000;
+      box-shadow: 0 0 15px #22d3ee;
+      transition: 0.2s;
+    }
+
+    #btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #22d3ee;
+    }
+  </style>
+</head>
+<body>
+
+<div id="num">0</div>
+<button id="btn">Click</button>
+
+<script>
+  let running = false;
+  let id;
+
+  document.getElementById("btn").onclick = () => {
+    running = !running;
+
+    if (running) {
+      id = setInterval(() => {
+        document.getElementById("num").textContent =
+          Math.floor(Math.random() * 100);
+      }, 200);
+    } else {
+      clearInterval(id);
+    }
+  };
+</script>
+
+</body>
